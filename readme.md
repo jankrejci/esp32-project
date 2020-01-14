@@ -18,10 +18,11 @@ install.bat
 pip install -r requirements.txt
 export.bat
 ```
-set IDF_PATH variable
+set enviroment variables
 ```
 setx IDF_PATH "C:\esp\esp-idf"
 setx IDF_TOOLS "C:\Users\uzivatel\.espressif\tools"
+setx GIT_EXECUTABLE "C:\Program Files\Git\bin\git.exe"
 ```
 to permanently write PATH wariable run command
 ```
