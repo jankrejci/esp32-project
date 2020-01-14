@@ -18,6 +18,11 @@ install.bat
 pip install -r requirements.txt
 export.bat
 ```
+set IDF_PATH variable
+```
+setx IDF_PATH "C:\esp\esp-idf"
+setx IDF_TOOLS "C:\Users\uzivatel\.espressif\tools"
+```
 to permanently write PATH wariable run command
 ```
 setx path "%PATH%"
@@ -32,8 +37,6 @@ cd esp-idf
 ./install.sh
 pip install -r requirements.txt
 ```
-
-2. add an additional environment variable called `IDF_TOOLS` that points to the tools directory in the xtensia  installation (C:\Program Files\Espressif\ESP-IDF Tools\tools)
 
 3. In VSCODE add the c++ extension 
 https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
