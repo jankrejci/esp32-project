@@ -8,7 +8,36 @@ This template can be used as is but, its intended as a quick start for the stude
 
 1. setup your toolchain and ESP-IDF as described in the [official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/#step-1-set-up-the-toolchain)
 
-2. add an additional environment variable called `IDF_TOOLS` that points to the tools directory in the xtensia  installation (C:\Program Files\Espressif\ESP-IDF Tools\tools)
+Windows:
+```
+mkdir c:\esp
+cd c:\esp
+git clone --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+install.bat
+pip install -r requirements.txt
+export.bat
+```
+set enviroment variables
+```
+setx IDF_PATH "C:\esp\esp-idf"
+setx IDF_TOOLS "C:\Users\uzivatel\.espressif\tools"
+setx GIT_EXECUTABLE "\"C:\Program Files\Git\bin\git.exe\""
+```
+to permanently write PATH wariable run command
+```
+setx path "%PATH%"
+```
+
+Linux:
+```
+mkdir ~/esp
+cd ~/esp
+git clone --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+./install.sh
+pip install -r requirements.txt
+```
 
 3. In VSCODE add the c++ extension 
 https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
