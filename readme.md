@@ -16,6 +16,11 @@ git clone --recursive https://github.com/espressif/esp-idf.git
 cd esp-idf
 install.bat
 pip install -r requirements.txt
+export.bat
+```
+to permanently write PATH wariable run command
+```
+setx path "%PATH%"
 ```
 
 Linux:
