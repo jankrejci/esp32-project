@@ -9,20 +9,24 @@ This template can be used as is but, its intended as a quick start for the stude
 1. setup your toolchain and ESP-IDF as described in the [official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/#step-1-set-up-the-toolchain)
 
 Windows:
-a. mkdir c:\esp
-b. cd c:\esp
-c. git clone --recursive https://github.com/espressif/esp-idf.git
-d. cd esp-idf
-e. install.bat
-f. pip install -r requirements.txt
+```
+mkdir c:\esp
+cd c:\esp
+git clone --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+install.bat
+pip install -r requirements.txt
+```
 
 Linux:
-a. mkdir ~/esp
-b. cd ~/esp
-c. git clone --recursive https://github.com/espressif/esp-idf.git
-d. cd esp-idf
-e. ./install.sh
-f. pip install -r requirements.txt
+```
+mkdir ~/esp
+cd ~/esp
+git clone --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+./install.sh
+pip install -r requirements.txt
+```
 
 2. add an additional environment variable called `IDF_TOOLS` that points to the tools directory in the xtensia  installation (C:\Program Files\Espressif\ESP-IDF Tools\tools)
 
