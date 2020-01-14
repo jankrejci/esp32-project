@@ -1,14 +1,26 @@
 
-# ESP32 Starter template
+# ESP32 Project template
 
 ## About This template
+This template is forked from [Mair/esp32-starter](https://github.com/Mair/esp32-starter) template.
 
-This template can be used as is but, its intended as a quick start for the students learning the ESP32-IDF through the Udemy course [Getting started with the ESP32 and the IDF](https://github.com/Mair/esp32-starter/blob/master/misc/commingsoon.md)
-## prerequisites
+## Prerequisities
+It is expected you have already installed following packages. If not install it to your system and try to run it from command line.
 
-1. setup your toolchain and ESP-IDF as described in the [official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/#step-1-set-up-the-toolchain)
+[Python 3.7+](https://www.python.org/) \
+[VS code](https://code.visualstudio.com/) \
+[GIT](https://git-scm.com/)
 
-Windows:
+It is expected that these commands works before instalation.
+```
+python --version
+git --version
+```
+
+## ESP-IDF installation
+Setup your toolchain and ESP-IDF as described in the [official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/#step-1-set-up-the-toolchain). You can also follow instructions below.
+
+**Windows**:
 ```
 mkdir c:\esp
 cd c:\esp
@@ -18,18 +30,18 @@ install.bat
 pip install -r requirements.txt
 export.bat
 ```
-set enviroment variables
+set enviroment variables, if you have different installation folders, change paths respectively
 ```
 setx IDF_PATH "C:\esp\esp-idf"
 setx IDF_TOOLS "C:\Users\uzivatel\.espressif\tools"
 setx GIT_EXECUTABLE "\"C:\Program Files\Git\bin\git.exe\""
 ```
-to permanently write PATH wariable run command
+write PATH permanently
 ```
 setx path "%PATH%"
 ```
 
-Linux:
+**Linux**:
 ```
 mkdir ~/esp
 cd ~/esp
@@ -37,41 +49,27 @@ git clone --recursive https://github.com/espressif/esp-idf.git
 cd esp-idf
 ./install.sh
 pip install -r requirements.txt
+. export.sh
 ```
 
+## VS code settings
 3. In VSCODE add the c++ extension 
 https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
- 
-4. ensure tour ESP32 is plugged in and that a COM PORT is established (You may need a driver for your ESP32 dev board)
-
-## vs code intellisense
-
 intellisense should just work so long as you have set up the IDF_PATH environment variable as described in the [official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/#step-1-set-up-the-toolchain) and the IDF_TOOLS as described above.
 
 >NB. you may meed to do an initial build and restart vscode before it can resolve all variables.
 
-## flashing the esp32
+## Tasks
+
+## Toolchain
+
+4. ensure tour ESP32 is plugged in and that a COM PORT is established (You may need a driver for your ESP32 dev board)
 
 1. in vs code, open a new terminal by pressing ctrl + \` (or pressing F1 and typing `open new terminal`)
 2. type the following command
 
-### for setups with idf.py
 
-```bash
-idf.py -p [your com port] flash monitor
-```
-
-### or other versions -
-*to set your com port*
-```bash
-make menuconfig 
-```
-set your com port in the menu under serial
-then
-```
-make flash monitor
-```
-## debuging
+## Debuging
 
 You will need an FT2322 in order to use a jtag. you can get them for about $10.00 on ali express.
 
