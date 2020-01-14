@@ -1,4 +1,5 @@
 build/
+esp-idf/
 sdkconfig
 sdkconfig.old
 ipch/

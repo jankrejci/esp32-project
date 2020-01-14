@@ -1,21 +1,11 @@
 {
-    "env": {
-        "MESSAGE":" MAC AND LINUX USERS!!!- change path from c:/... to ~/esp/... or as approirate for your enviroment",
-        "IDF_TOOLS": "c:/esp/tools/.espressif/tools",
-        "IDF_PATH": "c:/esp/esp-idf"
-    },
     "configurations": [
         {
-            "name": "esp32",
-            "browse": {
-                "path": [
-                    "${workspaceFolder}",
-                    "${IDF_PATH}",
-                    "${IDF_TOOLS}"
-                ],
-                "limitSymbolsToIncludedHeaders": true
-            },
+            "name": "Linux",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
             "includePath": [
+                "${config:idf.espIdfPath}/components",
                 "${workspaceFolder}",
                 "${workspaceFolder}/build/config",
                 "${workspaceFolder}/build/bootloader/config",
@@ -50,10 +40,12 @@
                 "${IDF_PATH}/components/nghttp/nghttp2/third-party/http-parser",
                 "${IDF_PATH}/components/log/include"
             ],
-            "defines": [],
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "browse": {
+                "path": [
+                    "${config:idf.espIdfPath}/components"
+                ],
+                "limitSymbolsToIncludedHeaders": false
+            }
         }
     ],
     "version": 4

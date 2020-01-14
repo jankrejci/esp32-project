@@ -1,0 +1,64 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build - Build project",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "idf.py",
+            "args": ["build"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Clean - Clean the project",
+            "type": "shell",
+            "command": "idf.py",
+            "args": ["fullclean"],
+        },
+        {
+            "label": "Flash - Flash the device",
+            "type": "shell",
+            "dependsOn": "Build - Build project",
+            "command": "idf.py",
+            "args":  ["flash"]
+        },
+        {
+            "label": "Monitor - Start the monitor",
+            "type": "shell",
+            "dependsOn": "Flash - Flash the device",
+            "command": "idf.py",
+            "args": ["monitor"]
+        },
+        {
+            "label":"OpenOCD - Start openOCD",
+            "type":"shell",
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel":"new"
+            },
+            "command": "openocd",
+            "args": ["-f", "debug/ftdi_ft2322.cfg", "-f", "debug/esp-wroom-32.cfg"],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                } 
+            },
+        },
+    ]
+}
