@@ -47,18 +47,6 @@
             },
             "command": "openocd",
             "args": ["-f", "debug/ftdi_ft2322.cfg", "-f", "debug/esp-wroom-32.cfg"],
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": "absolute",
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                } 
-            },
         },
     ]
 }
